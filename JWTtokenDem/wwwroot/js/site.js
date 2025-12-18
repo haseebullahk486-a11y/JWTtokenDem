@@ -4,7 +4,6 @@
 // Write your JavaScript code.
 
 
-//Register Action Method
 $(document).ready(function () {
 
     $('#Register').click(function () { 
@@ -14,7 +13,6 @@ $(document).ready(function () {
             Password: $("#Password").val(),
             City: $("#City").val()
         };
-
         $.ajax({
             url: "/Login/Register",
             type: "POST",
@@ -34,7 +32,6 @@ $(document).ready(function () {
         $('#registerModal').modal("show");
     });
 });
-
 function hideModal() {
     $('#registerModal').modal("hide");
     $("#UserName").val('');
@@ -42,19 +39,12 @@ function hideModal() {
     $("#Password").val('');
     $("#City").val('');
 }
-
-
-//Login Action Start
-
-
 $(document).ready(function () {
 
-    
     if (localStorage.getItem('jwt')) {
         alert("You are already logged in!");
         break; 
     }
-
     $('#Login').click(function () {
         let data = {
             Email: $("#Email").val(),
