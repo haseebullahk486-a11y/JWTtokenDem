@@ -40,16 +40,8 @@ namespace JWTtokenDem.Controllers
                     var CreateRoleForUser = await userManager.AddToRoleAsync(user, "User");
                     if(CreateRoleForUser.Succeeded)
                     {
-                        var LoginUser = await signInManager.PasswordSignInAsync(user, user.Password, false, false);
-                        if (LoginUser.Succeeded)
-                        {
-                            return RedirectToAction(nameof(Login));
-                        }
-                        else
-                        {
-                            return View();
-                        }
-                    }
+                      return RedirectToAction("Login");
+                }
                     else
                     {
                         return View();
